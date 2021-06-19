@@ -1,4 +1,4 @@
 /data/*.csv
 /res/*.csv
 *.csv
-/.ipynb_checkpoints
+/src/.ipynb_checkpoints
