@@ -20,3 +20,8 @@ Predict the likelihood of your flight arriving on time given week-day, scheduled
 
 # Future Plans
 Re-do project using Dask and RAPIDS to perform classification on out-of-memory dataframes
+
+
+# Tasks
+- [ ] Explore feature-selection methods (stepwise, lasso, etc)
+- [ ] Address multicollinearity
