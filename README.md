@@ -10,7 +10,8 @@ Predict the likelihood of your flight arriving on time given week-day, scheduled
 # Learning Outomes
 - [x] Become familiar with Bokeh and Datashader for plotting large datasets
 - [x] Use NVIDIA Rapids to accelerate parralelizable operations on the GPU for columnar operations
-- [ ] Use XGBoost on GPU to perform the aforementioned classification
+- [x] Use XGBoost on GPU to perform the aforementioned classification
+- [ ] Deploy XGBoost model on Flask Server
 
 # Technologies Used
 - [NVIDIA RAPIDS](https://developer.nvidia.com/rapids) 
@@ -25,4 +26,5 @@ Re-do project using Dask and RAPIDS to perform classification on out-of-memory d
 # Tasks
 - [x] Explore feature-selection methods (stepwise, lasso, etc)
 - [x] Address multicollinearity
-- [ ] Read/implement Random forest using XGBoost
+- [x] Read/implement Random forest using XGBoost
+- [ ] Deploy model
