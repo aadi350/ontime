@@ -4,6 +4,10 @@ import pandas as pd
 import cudf
 import cupy as cp
 import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import KFold
+from sklearn.model_selection import cross_val_score
+from sklearn.metrics import mean_squared_error
 
 """
     This mirrors most of what is at the end of ontime/src/eda.ipynb. However, in order to be executed without the overhead of a jupyter server (this is training on a laptop)
@@ -105,5 +109,17 @@ params.update(learning_task_params)
 target = data['ArrDel15']
 data = data.drop('ArrDel15', axis=1)
 
-dtrain = xgb.DMatrix(data, target)
+X_train, X_test, y_train, y_test = train_test_split(data, target, test_size=0.33, random_state=42, shuffle=True)
+
+
+dtrain = xgb.DMatrix(X_train, y_train)
 bst = xgb.train(params, dtrain)
+
+xg_reg = xgb.XGBRegressor(objective ='reg:linear', colsample_bytree = 0.3, learning_rate = 0.1,
+                max_depth = 10, alpha = 10, n_estimators = 10)
+
+xg_reg.fit(X_train,y_train)
+y_test_pred = xg_reg.predict(X_test)
+
+mse = mean_squared_error(y_test_pred, y_test.to_array())
+print(mse)
