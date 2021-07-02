@@ -3,6 +3,7 @@ from IBM Developer. This dataset includes two CSVs containing all US Domestic Fl
 
 This dataset included two splits, a randomly sampled split containing 2e06 samples, and a full split containing 2e08 rows. For the purposes of this project, the former dataset will be used
 
+The data-story for this project is located mainly in the [EDA Notebook](src/eda.ipynb)
 
 # Project Goals
 Predict the likelihood of your flight arriving on time given week-day, scheduled departure time, route and time-of-year (quarterly or weekly). This will be formulated as a classification problem, and will be solved using the Decision-Tree Algorithm
@@ -11,7 +12,6 @@ Predict the likelihood of your flight arriving on time given week-day, scheduled
 - [x] Become familiar with Bokeh and Datashader for plotting large datasets
 - [x] Use NVIDIA Rapids to accelerate parralelizable operations on the GPU for columnar operations
 - [x] Use XGBoost on GPU to perform the aforementioned classification
-- [ ] Deploy XGBoost model on Flask Server
 
 # Technologies Used
 - [NVIDIA RAPIDS](https://developer.nvidia.com/rapids) 
@@ -20,11 +20,13 @@ Predict the likelihood of your flight arriving on time given week-day, scheduled
 - [XGBoost](https://github.com/dmlc/xgboost)
 
 # Future Plans
-Re-do project using Dask and RAPIDS to perform classification on out-of-memory dataframes
+- Re-do project using Dask and RAPIDS to perform classification on out-of-memory dataframes
+- Deployment on a Flask Server to perform real-time prediction of the chances of your flight being delayed
 
 
 # Tasks
 - [x] Explore feature-selection methods (stepwise, lasso, etc)
 - [x] Address multicollinearity
 - [x] Read/implement Random forest using XGBoost
-- [ ] Deploy model
+
+![alt text](img/overall_map.png)
